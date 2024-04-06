@@ -2,18 +2,20 @@ import PropTypes from 'prop-types'
 import "./Buttons.sass"
 
 const CalculatorButton = ({data}) => {
-  return <button type="button" id={data.word}>{data.symbol}</button>
+  const listener = () => data.listener(data.symbol)
+  return <button type="button" id={data.word} onClick={listener}>{data.symbol}</button>
 }
 
 CalculatorButton.propTypes = {
   data: PropTypes.shape({
     word: PropTypes.string,
     symbol: PropTypes.string,
+    listener: PropTypes.func
   })
 }
 
-const Keypad = () => {
-  const drafter = (word, symbol) => ({word, symbol})
+const Keypad = (props) => {
+  const drafter = (word, symbol, listener = props.handler) => ({word, symbol, listener})
   const drafts = {
     operands: [
       drafter("decimal", "."),
@@ -29,6 +31,7 @@ const Keypad = () => {
       drafter("nine", 9)
     ],
     operators: [
+      drafter("clear", "AC"),
       drafter("add", "+"),
       drafter("subtract", "-"),
       drafter("multiply", "*"),
@@ -50,6 +53,10 @@ const Keypad = () => {
       <div>{operators}</div>
     </section>
   )
+}
+
+Keypad.propTypes = {
+  handler: PropTypes.func
 }
 
 export default Keypad
