@@ -1,5 +1,5 @@
 function calculate(expression) {
-  return eval(expression)
+  return String(eval(expression))
 }
 
 export default calculate

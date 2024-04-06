@@ -19,16 +19,16 @@ const Keypad = (props) => {
   const drafts = {
     operands: [
       drafter("decimal", "."),
-      drafter("zero", 0),
-      drafter("one", 1),
-      drafter("two", 2),
-      drafter("three", 3),
-      drafter("four", 4),
-      drafter("five", 5),
-      drafter("six", 6),
-      drafter("seven", 7),
-      drafter("eight", 8),
-      drafter("nine", 9)
+      drafter("zero", "0"),
+      drafter("one", "1"),
+      drafter("two", "2"),
+      drafter("three", "3"),
+      drafter("four", "4"),
+      drafter("five", "5"),
+      drafter("six", "6"),
+      drafter("seven", "7"),
+      drafter("eight", "8"),
+      drafter("nine", "9")
     ],
     operators: [
       drafter("clear", "AC"),
