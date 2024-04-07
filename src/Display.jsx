@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types'
+import "./Display.scss"
 
 const Display = (props) => {
   return (

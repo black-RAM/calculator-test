@@ -2,7 +2,7 @@ import { useState } from 'react'
 import Display from './Display'
 import Keypad from './Buttons'
 import calculate from './logic'
-import "./App.sass"
+import "./App.scss"
 
 const Calculator = () => {
   const [input, setInput] = useState("")
@@ -12,7 +12,7 @@ const Calculator = () => {
       setOutput(calculate(input))
       setInput("")
     },
-    "AC": () => {
+    "C": () => {
       setInput("")
       setOutput("")
     }

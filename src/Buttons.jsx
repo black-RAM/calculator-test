@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import "./Buttons.sass"
+import "./Buttons.scss"
 
 const CalculatorButton = ({data}) => {
   const listener = () => data.listener(data.symbol)
@@ -18,20 +18,20 @@ const Keypad = (props) => {
   const drafter = (word, symbol, listener = props.handler) => ({word, symbol, listener})
   const drafts = {
     operands: [
-      drafter("decimal", "."),
-      drafter("zero", "0"),
-      drafter("one", "1"),
-      drafter("two", "2"),
-      drafter("three", "3"),
-      drafter("four", "4"),
-      drafter("five", "5"),
-      drafter("six", "6"),
-      drafter("seven", "7"),
+      drafter("nine", "9"),
       drafter("eight", "8"),
-      drafter("nine", "9")
+      drafter("seven", "7"),
+      drafter("six", "6"),
+      drafter("five", "5"),
+      drafter("four", "4"),
+      drafter("three", "3"),
+      drafter("two", "2"),
+      drafter("one", "1"),
+      drafter("zero", "0"),
+      drafter("decimal", "."),
+      drafter("clear", "C"),
     ],
     operators: [
-      drafter("clear", "AC"),
       drafter("add", "+"),
       drafter("subtract", "-"),
       drafter("multiply", "*"),
